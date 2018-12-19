@@ -1,9 +1,12 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Giftbit.API.Clients.RestSharp;
 using Giftbit.API.Http;
+using Giftbit.API.Model.Request;
 using Giftbit.API.Model.Response;
 using NSubstitute;
+using RestSharp;
 using Xunit;
 
 namespace Giftbit.API.Tests.xunit.Clients
@@ -16,16 +19,12 @@ namespace Giftbit.API.Tests.xunit.Clients
             var factory = Substitute.For<IConnection>();
             var brandsClient = new CampaignClient(factory);
 
-            await brandsClient.CreateCampaign(null, CancellationToken.None);
+            var request = new CreateCampaignRequest();
+            await brandsClient.CreateCampaign(request, CancellationToken.None);
 
             await factory.Received()
-                .ExecuteRequest<CreateCampaignResponse>("/brands/fake_brand", token: CancellationToken.None);
-
-            /*
-             *         return await _connection
-                .ExecuteRequest<CreateCampaignResponse>("/campaign", null, request, "/campaign", Method.POST, token);
-     
-             */
+                .ExecuteRequest<CreateCampaignResponse>("/campaign", data: request, method: Method.POST,
+                    token: CancellationToken.None);
         }
 
         [Fact]
@@ -34,18 +33,11 @@ namespace Giftbit.API.Tests.xunit.Clients
             var factory = Substitute.For<IConnection>();
             var brandsClient = new CampaignClient(factory);
 
-            await brandsClient.CreateCampaign(null, CancellationToken.None);
+            var fakeId = Guid.NewGuid().ToString();
+            await brandsClient.RetrieveCampaignByIdOrUuid(fakeId, CancellationToken.None);
 
             await factory.Received()
-                .ExecuteRequest<CreateCampaignResponse>("/brands/fake_brand", token: CancellationToken.None);
-
-            /*
-               return await _connection
-                .ExecuteRequest<RetrieveCampaignResponse>($"/campaign/{idOrUuid}", null, null, "/campaign",
-                    token: token);
-      
-     
-             */
+                .ExecuteRequest<RetrieveCampaignResponse>($"/campaign/{fakeId}", token: CancellationToken.None);
         }
     }
 }
