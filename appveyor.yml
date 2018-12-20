@@ -21,8 +21,9 @@ build_script:
 after_build:
   # For once the build has completed
 artifacts:
- - path: '\Giftbit.API\bin\Debug\netstandard2.0\publish\'
-   name: Giftbit.API
+ - path: '**\*.nupkg'
+   type: NuGetPackage
+   
 clone_depth: 1
 test_script:
   # restore packages for our unit tests
