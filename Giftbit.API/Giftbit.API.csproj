@@ -3,10 +3,18 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>latest</LangVersion>
+    <Authors>Mathieu Roy</Authors>
+    <Company>Giftbit</Company>
+    <Product>Giftbit API Client</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl>https://bitbucket.ethor.com:8446/projects/EXT/repos/giftbitclient/</RepositoryUrl>
+    <RepositoryType>Bitbucket</RepositoryType>
+    <Copyright>MIT License - Copyright 2019 Giftbit</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn/>
+    <NoWarn />
     <WarningsAsErrors>NU1603;NU1605;NU1701</WarningsAsErrors>
   </PropertyGroup>
 
