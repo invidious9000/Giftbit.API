@@ -2,7 +2,7 @@
 This package targets .NET Standard 2.0 and provides clients for Giftbit API v1.
 
 # Install
-TODO: Determine package name and repo location, update project properties and then update this part of the readme.md
+*TODO:* Determine package name and repo location, update project properties and then update this part of the readme.md
 Nuget> Install-Package Giftbit.API
 
 # Usage
@@ -29,5 +29,6 @@ foreach (var gift in myCampaignGiftsResponse.Gifts)
 ```
 
 # TODO
-Test coverage is in xunit and currently only asserts request sanity and makes no guarantees about response content - these tests could be expanded upon. 
-Pagination could be handled automatically
+
+* Test coverage is in xunit and currently only asserts request sanity and makes no guarantees about response content - these tests could be expanded upon. 
+* Pagination could be handled automatically
