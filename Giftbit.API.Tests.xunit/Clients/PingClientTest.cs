@@ -14,8 +14,10 @@ namespace Giftbit.API.Tests.xunit.Clients
         public async Task CorrectRequestForPing()
         {
             var factory = Substitute.For<IConnection>();
-            var pingClient = new PingClient(factory);
-            await pingClient.Ping(CancellationToken.None);
+            var client = new PingClient(factory);
+
+            await client.Ping(CancellationToken.None);
+
             await factory.Received().ExecuteRequest<PingResponse>("/ping", token: CancellationToken.None);
         }
     }

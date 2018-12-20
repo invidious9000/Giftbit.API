@@ -17,10 +17,11 @@ namespace Giftbit.API.Tests.xunit.Clients
         public async Task CorrectRequestForCreateCampaign()
         {
             var factory = Substitute.For<IConnection>();
-            var brandsClient = new CampaignClient(factory);
+            var client = new CampaignClient(factory);
 
             var request = new CreateCampaignRequest();
-            await brandsClient.CreateCampaign(request, CancellationToken.None);
+
+            await client.CreateCampaign(request, CancellationToken.None);
 
             await factory.Received()
                 .ExecuteRequest<CreateCampaignResponse>("/campaign", data: request, method: Method.POST,
@@ -31,10 +32,11 @@ namespace Giftbit.API.Tests.xunit.Clients
         public async Task CorrectRequestForRetrieveCampaignByIdOrUuid()
         {
             var factory = Substitute.For<IConnection>();
-            var brandsClient = new CampaignClient(factory);
+            var client = new CampaignClient(factory);
 
             var fakeId = Guid.NewGuid().ToString();
-            await brandsClient.RetrieveCampaignByIdOrUuid(fakeId, CancellationToken.None);
+
+            await client.RetrieveCampaignByIdOrUuid(fakeId, CancellationToken.None);
 
             await factory.Received()
                 .ExecuteRequest<RetrieveCampaignResponse>($"/campaign/{fakeId}", token: CancellationToken.None);

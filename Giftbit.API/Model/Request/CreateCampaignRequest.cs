@@ -8,7 +8,7 @@ namespace Giftbit.API.Model.Request
     {
         [JsonProperty("gift_template")] public string GiftTemplate { get; set; }
         [JsonProperty("contacts")] public List<Contact> Contacts { get; set; }
-        [JsonProperty("price_in_cents")] public long PriceInCents { get; set; }
+        [JsonProperty("price_in_cents")] public int PriceInCents { get; set; }
         [JsonProperty("brand_codes")] public List<string> BrandCodes { get; set; }
         [JsonProperty("expiry")] public string Expiry { get; set; }
         [JsonProperty("id")] public string Id { get; set; }

@@ -6,7 +6,7 @@ namespace Giftbit.API.Model.Request
     public class AddFundsRequest
     {
         [JsonProperty("id")] public string Id { get; set; }
-        [JsonProperty("fund_amount_in_cents")] public long FundAmountInCents { get; set; }
+        [JsonProperty("fund_amount_in_cents")] public int FundAmountInCents { get; set; }
         [JsonProperty("currencyisocode")] public string CurrencyIsoCode { get; set; }
     }
 }

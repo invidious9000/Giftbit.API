@@ -6,9 +6,12 @@ using RestSharp.Authenticators;
 
 namespace Giftbit.API
 {
-    public class GiftbitClient:IGiftbitClient
+    public class GiftbitClient : IGiftbitClient
     {
-        public GiftbitClient(string apiToken, string apiUriRoot = "https://api-testbed.giftbit.com/papi/v1/")
+        public const string ProductionUrl = "https://api.giftbit.com/papi/v1";
+        public const string TestbedUrl = "https://api-testbed.giftbit.com/papi/v1/";
+
+        public GiftbitClient(string apiToken, string apiUriRoot = TestbedUrl)
         {
             var client = new RestClient(apiUriRoot)
             {

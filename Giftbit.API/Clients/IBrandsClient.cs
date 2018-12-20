@@ -8,8 +8,8 @@ namespace Giftbit.API.Clients
     {
         Task<ListBrandsResponse> ListBrands(
             int? region = default,
-            long? maxPriceInCents = default,
-            long? minPriceInCents = default,
+            int? maxPriceInCents = default,
+            int? minPriceInCents = default,
             string currencyIsoCode = default,
             string search = default,
             int? limit = default,

@@ -11,8 +11,8 @@ namespace Giftbit.API.Model.Response
 
     public class Fund
     {
-        public long AvailableInCents { get; set; }
-        public long PendingInCents { get; set; }
-        public long ReservedInCents { get; set; }
+        public int AvailableInCents { get; set; }
+        public int PendingInCents { get; set; }
+        public int ReservedInCents { get; set; }
     }
 }

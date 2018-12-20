@@ -7,7 +7,7 @@ namespace Giftbit.API.Model
         public string Message { get; set; }
         public string Subject { get; set; }
         public List<Contact> Contacts { get; set; }
-        public long PriceInCents { get; set; }
+        public int PriceInCents { get; set; }
         public List<string> BrandCodes { get; set; }
         public string Status { get; set; }
         public string Uuid { get; set; }
@@ -24,10 +24,10 @@ namespace Giftbit.API.Model
     public class Fees
     {
         public List<CostEntry> CostEntries { get; set; }
-        public long SubtotalInCents { get; set; }
-        public long TaxInCents { get; set; }
+        public int SubtotalInCents { get; set; }
+        public int TaxInCents { get; set; }
         public string TaxType { get; set; }
-        public long TotalInCents { get; set; }
+        public int TotalInCents { get; set; }
     }
 
     public class CostEntry
@@ -36,11 +36,11 @@ namespace Giftbit.API.Model
         public double Percentage { get; set; }
 
         public string FeeType { get; set; }
-        public long AmountInCents { get; set; }
+        public int AmountInCents { get; set; }
         public string Currency { get; set; }
         public string TaxType { get; set; }
-        public long TaxInCents { get; set; }
+        public int TaxInCents { get; set; }
         public int NumberOfGifts { get; set; }
-        public long FeePerGiftInCents { get; set; }
+        public int FeePerGiftInCents { get; set; }
     }
 }

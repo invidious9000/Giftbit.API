@@ -14,8 +14,10 @@ namespace Giftbit.API.Tests.xunit.Clients
         public async Task CorrectRequestForListRegions()
         {
             var factory = Substitute.For<IConnection>();
-            var pingClient = new RegionsClient(factory);
-            await pingClient.ListRegions(CancellationToken.None);
+            var client = new RegionsClient(factory);
+
+            await client.ListRegions(CancellationToken.None);
+
             await factory.Received().ExecuteRequest<ListRegionsResponse>("/regions", token: CancellationToken.None);
         }
     }

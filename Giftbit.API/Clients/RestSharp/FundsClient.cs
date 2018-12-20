@@ -19,14 +19,14 @@ namespace Giftbit.API.Clients.RestSharp
         public async Task<FundingInformationResponse> RetrieveFundingInformation(CancellationToken token = default)
         {
             return await _connection
-                .ExecuteRequest<FundingInformationResponse>("/funds", null, null, "/funds", token: token);
+                .ExecuteRequest<FundingInformationResponse>("/funds", token: token);
         }
 
         public async Task<FundingInformationResponse> AddFundsThroughCreditCard(AddFundsRequest request,
             CancellationToken token = default)
         {
             return await _connection
-                .ExecuteRequest<FundingInformationResponse>("/funds", null, request, "/funds", Method.POST, token);
+                .ExecuteRequest<FundingInformationResponse>("/funds", null, request, null, Method.POST, token);
         }
     }
 }
