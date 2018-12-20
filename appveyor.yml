@@ -16,7 +16,8 @@ before_build:
 build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: cd Giftbit.API
-  - cmd: dotnet publish Giftbit.API.csproj
+  - cmd: dotnet build
+  - cmd: dotnet publish
 after_build:
   # For once the build has completed
 artifacts:
