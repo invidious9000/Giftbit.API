@@ -7,8 +7,8 @@
     <Company>Giftbit</Company>
     <Product>Giftbit API Client</Product>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl></PackageProjectUrl>
-    <RepositoryUrl>https://bitbucket.ethor.com:8446/projects/EXT/repos/giftbitclient/</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/invidious9000/Giftbit.API</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/invidious9000/Giftbit.API</RepositoryUrl>
     <RepositoryType>Bitbucket</RepositoryType>
     <Copyright>MIT License - Copyright 2019 Giftbit</Copyright>
   </PropertyGroup>
@@ -16,6 +16,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn />
     <WarningsAsErrors>NU1603;NU1605;NU1701</WarningsAsErrors>
+    <OutputPath>bin\Debug\netstandard2.0\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\netstandard2.0\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
