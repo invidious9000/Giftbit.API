@@ -24,7 +24,7 @@ Console.WriteLine($"ResponseInfo: {myCampaignGiftsResponse.Info}");
 //Iterate through gifts
 foreach (var gift in myCampaignGiftsResponse.Gifts) 
 {
-	Console.WriteLine($"Gift details: {gift}");
+    Console.WriteLine($"Gift details: {gift}");
 }
 ```
 
